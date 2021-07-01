@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shows.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Shows</title>
+</head>
+<body>
+<div id='wrapper'>
+<h1>List of Shows 
+<img src="{% static 'images/tv.png' %}" />
+</h1>
+    <table>
+        <thead>
+            <th><span>&#10084;</span>Show Title</th>
+            <th><span>&#10084;</span>Network</th>
+            <th><span>&#10084;</span>Release Date</th>
+            <th><span>&#10084;</span>Description</th>
+            <th><span>&#10084;</span>Modify</th>
+        </thead>
+        <tbody>
+            {%for show in all_shows %}
+            <tr>
+                <td>{{show.title}}</td>
+                <td>{{show.network}}</td>
+                <td>{{show.release_date}}</td>
+                <td>{{show.description}}</td>
+                <td>
+                <a href="shows/{{show.id}}">Show</a>|<a href="shows/{{show.id}}/edit">Edit</a>|<a href="shows/delete/{{show.id}}">Delete</a>
+                </td>
+            {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <form action="/shows/new" method="post">
+    {% csrf_token %} 
+        <button>Create A New TV Show </button>
+    </form>
+    
+    
+</div>
+</body>
+</html>
+

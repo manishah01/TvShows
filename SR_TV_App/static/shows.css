@@ -1,0 +1,131 @@
+* {
+    margin:0px;
+    padding:0px;
+    font-family:'Cutive Mono', monospace;
+}
+
+body{
+    background-image: url("images/bear.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+}
+#wrapper {
+    padding:10px;
+    margin:0 auto;
+    margin-top:20px;
+    width:850px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border:2px dotted#000000;
+}
+
+h1{
+    color:rgb(128, 108, 97);
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-weight: 100;
+    font-size: 50px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding:10px;;
+    border:2px dotted rgb(114, 89, 69);
+    border-radius: 8px;
+}
+
+span{
+    display:block;
+    color:pink;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+img{
+    height:50px;
+    margin-bottom:-15px;
+}
+
+th, td{
+    background-color: rgb(255, 255, 255);
+    border:1px dotted rgb(0, 0, 0);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+th{
+    color:white;
+    background-color: #9a938b;
+}
+
+input{
+    padding:10px;
+}
+
+table{
+    background-color: pink;
+    border:2px dotted rgb(0, 0, 0);
+}
+
+a{
+    margin-left:5px;
+    padding:5px;
+    background-color: #74829c;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-decoration: none;
+    
+}
+
+button{
+    color: white;
+    text-shadow: -.5px -.5px 0 #000, .5px -.5px 0 #000, -.5px .5px 0 #000, .5px .5px 0 #000;
+    margin-top:10px;
+    display:block;
+    background-color: #74829c;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.show_form {
+background-color: white;
+text-align: center;
+}
+
+input{
+    width:300px;
+}
+
+.show_form button{
+    margin-left:375px;
+}
+
+h2{
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding:10px;;
+    border:1px dotted rgb(0, 0, 0);
+    border-radius: 8px;
+}
+
+#update{
+    color: #74829c;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+#content{
+    text-align: center;
+}
+
+
+.messages li{
+    font-weight: 300;
+    list-style-type: none;
+    color:red;
+}

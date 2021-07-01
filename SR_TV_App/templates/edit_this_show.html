@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shows.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Show</title>
+</head>
+<body>
+    <div id="wrapper">
+        <button><a href="/">Home</a></button>
+
+        {% if messages %}
+        <ul class="messages">    
+        {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+        </ul>
+        {% endif %}
+        
+        <h2> <span>&#10084;</span>Edit Show! </h2>
+        <form action="/shows/{{show.id}}/update" method="post" class="show_form">
+            {% csrf_token %} 
+            <h4>Update Title</h4>
+            <input type="text" name="title" value="{{show.title}}">
+
+            <h4>Update Network</h4>
+            <input type="text" name="network" value="{{show.network}}">
+
+            <h4>Update Release Date</h4>
+            <input type="date" name="release_date" value="{{show.release_date|date:'Y-m-d'}}">
+
+            <h4>Update Description</h4>
+            <input type="text" name="description" value ="{{show.description}}" id="description">
+
+            <button>Update Show!</button>
+        </form>
+        <button><a href="/shows/{{show.id}}">View Show Information</a></button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shows.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Information</title>
+</head>
+<body>
+    <div id="wrapper">
+    <button><a href="/">Home</a></button>
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <h2><span>&#10084;</span>{{show.title}}</h2>
+    <div id="content">
+    <h3>Network:</h3> {{show.network}}
+    <h3>Release Date:</h3> {{show.release_date}}
+    <h3>Description:</h3> {{show.description}}
+    </div>
+    <div id="update">
+    <h3>Updated at: </h3>{{show.updated_at}}
+    </div>
+    <a href="{{show.id}}/edit">Edit</a>|<a href="delete/{{show.id}}">Delete</a>
+    </div>
+</body>
+</html>
